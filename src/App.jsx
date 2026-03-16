@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-white font-sans overflow-x-hidden">
       <Navbar />
       <main className="flex flex-col items-center">
         <Hero />

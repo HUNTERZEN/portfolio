@@ -1,10 +1,8 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { InfiniteSlider } from './ui/infinite-slider.jsx';
-import { HeroVideo } from './ui/hero-video.jsx';
 
 export function Hero() {
-  const hlsUrl = "https://customer-cbeadsgr09pnsezs.cloudflarestream.com/697945ca6b876878dba3b23fbd2f1561/manifest/video.m3u8";
 
   const logos = [
     { name: "OpenAI", url: "https://html.tailus.io/blocks/customers/openai.svg" },
@@ -25,18 +23,7 @@ export function Hero() {
   return (
     <section className="relative w-full flex flex-col min-h-screen overflow-hidden" id="home">
 
-      {/* ---------- Video Background (behind everything) ---------- */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#050505] via-[#050505]/60 to-[#050505]" />
-        <HeroVideo
-          src={hlsUrl}
-          className="w-full h-full object-cover opacity-40 mix-blend-screen"
-        />
-      </div>
 
-      {/* Ambient glow orbs */}
-      <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#983AD6] rounded-full mix-blend-screen filter blur-[180px] opacity-[0.07] pointer-events-none" />
-      <div className="absolute top-[30%] right-[10%] w-[350px] h-[350px] bg-[#FA93FA] rounded-full mix-blend-screen filter blur-[180px] opacity-[0.05] pointer-events-none" />
 
       {/* ---------- Main Content ---------- */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 flex-grow pt-32 pb-8">
