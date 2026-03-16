@@ -21,52 +21,52 @@ export function Projects() {
 
   const projects = [
     {
-      title: "Simple-Weather-Code",
-      desc: "A simple weather application code.",
-      link: "https://github.com/HUNTERZEN/Simple-Weather-Code",
-      lang: "CSS",
-      langColor: "#563d7c",
-      stars: 0
-    },
-    {
-      title: "Git-AdvanceGG",
-      desc: "Advanced Git workflows and optimizations.",
-      link: "https://github.com/HUNTERZEN/Git-AdvanceGG",
-      lang: "Python",
-      langColor: "#3572A5",
-      stars: 0
-    },
-    {
-      title: "Kernel-Builder",
-      desc: "Can make kernel with your device trees links and no need to download anything.",
-      link: "https://github.com/HUNTERZEN/Kernel-Builder",
+      title: "MaxPerfomanceMagiskModule",
+      desc: "A professional, universal system optimization module built for one purpose: Raw Performance. This module automates aggressive system-level tweaks...",
+      link: "https://github.com/HUNTERZEN/MaxPerfomanceMagiskModule",
       lang: "Shell",
       langColor: "#89e051",
-      stars: 0
-    },
-    {
-      title: "Developer-Portfolio",
-      desc: "A high-performance, responsive portfolio website built to showcase projects.",
-      link: "https://github.com/HUNTERZEN/Personal-Developer-Portfolio",
-      lang: "JavaScript",
-      langColor: "#f1e05a",
-      stars: 0
+      stars: 1
     },
     {
       title: "ExtremeL3",
-      desc: "A high-performance system optimization module meticulously tuned for Snapdragon 870.",
+      desc: "A high-performance system optimization module meticulously tuned for the Snapdragon 870 chipset on the Realme GT Neo 3T (codename: spartan).",
       link: "https://github.com/HUNTERZEN/ExtremeL3",
       lang: "Shell",
       langColor: "#89e051",
       stars: 0
     },
     {
-      title: "MaxPerfomanceMagisk",
-      desc: "A professional, universal system optimization module built for Raw Performance.",
-      link: "https://github.com/HUNTERZEN/MaxPerfomanceMagiskModule",
-      lang: "Shell",
-      langColor: "#89e051",
-      stars: 1
+      title: "Neurovia",
+      desc: "Core frontend application for Neurovia Solutions.",
+      link: "https://github.com/HUNTERZEN/Neurovia",
+      lang: "TypeScript",
+      langColor: "#3178c6",
+      stars: 0
+    },
+    {
+      title: "Personal-Portfolio",
+      desc: "A high-performance, responsive developer portfolio.",
+      link: "https://github.com/HUNTERZEN/Personal-Portfolio",
+      lang: "JavaScript",
+      langColor: "#f1e05a",
+      stars: 0
+    },
+    {
+      title: "portfolio",
+      desc: "Source code for this portfolio website.",
+      link: "https://github.com/HUNTERZEN/portfolio",
+      lang: "JavaScript",
+      langColor: "#f1e05a",
+      stars: 0
+    },
+    {
+      title: "Simple-Weather-Code",
+      desc: "A simple weather application code.",
+      link: "https://github.com/HUNTERZEN/Simple-Weather-Code",
+      lang: "CSS",
+      langColor: "#563d7c",
+      stars: 0
     }
   ];
 
