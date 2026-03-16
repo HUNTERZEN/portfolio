@@ -84,7 +84,7 @@ export function Hero() {
       </div>
 
       {/* ---------- Logo Cloud ---------- */}
-      <div className="relative z-30 w-full border-t border-white/[0.04] py-6 bg-[#050505]/60 backdrop-blur-sm">
+      <div className="relative z-30 w-full border-t border-white/[0.04] py-6 bg-white/[0.02] backdrop-blur-xl border-y border-white/[0.05]">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6 md:gap-10">
 
           <div className="flex-shrink-0 flex items-center gap-4">
