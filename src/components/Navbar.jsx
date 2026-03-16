@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -90,41 +91,77 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white/70 hover:text-white transition-colors"
+          className="md:hidden text-white/70 hover:text-white transition-colors relative w-8 h-8 flex items-center justify-center"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <AnimatePresence mode="wait">
+            {mobileOpen ? (
+              <motion.div
+                key="close"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X className="w-6 h-6" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu className="w-6 h-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
       </div>
 
       {/* Mobile Nav Dropdown */}
-      {mobileOpen && (
-        <div className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-white/[0.06] animate-slide-down">
-          <div className="flex flex-col px-6 py-4 gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                  activeSection === link.href.slice(1)
-                    ? 'text-white bg-white/[0.06]'
-                    : 'text-white/50 hover:text-white hover:bg-white/[0.03]'
-                }`}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="md:hidden overflow-hidden bg-[#0a0a0a]/95 backdrop-blur-xl border-t border-white/[0.06]"
+          >
+            <div className="flex flex-col px-6 py-4 gap-1">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleClick(e, link.href)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 + 0.1, duration: 0.25 }}
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    activeSection === link.href.slice(1)
+                      ? 'text-white bg-white/[0.06]'
+                      : 'text-white/50 hover:text-white hover:bg-white/[0.03]'
+                  }`}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <motion.a
+                href="mailto:kunalsingha390@gmail.com"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.05 + 0.1, duration: 0.25 }}
+                className="mt-2 px-4 py-3 text-sm font-semibold rounded-xl text-center bg-gradient-to-r from-[#FA93FA]/10 to-[#983AD6]/10 border border-[#C967E8]/30 text-white"
               >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="mailto:kunalsingha390@gmail.com"
-              className="mt-2 px-4 py-3 text-sm font-semibold rounded-xl text-center bg-gradient-to-r from-[#FA93FA]/10 to-[#983AD6]/10 border border-[#C967E8]/30 text-white"
-            >
-              Contact Me
-            </a>
-          </div>
-        </div>
-      )}
+                Contact Me
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

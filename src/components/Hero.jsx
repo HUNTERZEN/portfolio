@@ -24,11 +24,11 @@ export function Hero() {
 
   return (
     <section className="relative w-full flex flex-col min-h-screen overflow-hidden" id="home">
-      
+
       {/* ---------- Video Background (behind everything) ---------- */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#050505] via-[#050505]/60 to-[#050505]" />
-        <HeroVideo 
+        <HeroVideo
           src={hlsUrl}
           className="w-full h-full object-cover opacity-40 mix-blend-screen"
         />
@@ -40,7 +40,7 @@ export function Hero() {
 
       {/* ---------- Main Content ---------- */}
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 flex-grow pt-32 pb-8">
-        
+
         {/* Status Badge */}
         <div className="animate-fade-in-up opacity-0 flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] mb-10 backdrop-blur-md">
           <span className="relative flex h-2.5 w-2.5">
@@ -99,7 +99,7 @@ export function Hero() {
       {/* ---------- Logo Cloud ---------- */}
       <div className="relative z-30 w-full border-t border-white/[0.04] py-6 bg-[#050505]/60 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          
+
           <div className="flex-shrink-0 flex items-center gap-4">
             <span className="text-[11px] font-semibold uppercase tracking-[2px] text-white/30">
               Trusted by
@@ -108,18 +108,18 @@ export function Hero() {
           </div>
 
           <div className="flex-grow w-full overflow-hidden">
-             <InfiniteSlider duration={30} className="py-1">
-                <div className="flex items-center gap-14 px-7">
-                  {logos.map((logo, i) => (
-                    <img 
-                      key={i} 
-                      src={logo.url} 
-                      alt={logo.name} 
-                      className="h-7 md:h-8 w-auto brightness-0 invert opacity-30 hover:opacity-60 transition-opacity duration-500" 
-                    />
-                  ))}
-                </div>
-             </InfiniteSlider>
+            <InfiniteSlider duration={30} className="py-1">
+              <div className="flex items-center gap-12 px-6">
+                {logos.map((logo, i) => (
+                  <span
+                    key={i}
+                    className="text-sm font-medium text-white/30 hover:text-white/60 transition-colors duration-500 whitespace-nowrap"
+                  >
+                    {logo.name}
+                  </span>
+                ))}
+              </div>
+            </InfiniteSlider>
           </div>
 
         </div>
